@@ -18,7 +18,7 @@ app.add_typer(software.app, name="software")
 
 def validate_host(value: str):
     """Check if host is a valid URL."""
-    if url(value):
+    if not url(value):
         raise typer.BadParameter("URL is not valid")
     return value
 
